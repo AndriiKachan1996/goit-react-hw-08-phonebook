@@ -8,7 +8,7 @@ export const Navigation = () => {
         <span className={css.span}>Home</span>
       </NavLink>
       <NavLink className={css.button} to="/contacts">
-        <span className={css.span}>Tasks</span>
+        <span className={css.span}>Contacts</span>
       </NavLink>
     </nav>
   );

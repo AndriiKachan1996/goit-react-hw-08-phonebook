@@ -1,11 +1,30 @@
+import { useDispatch } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
 import css from './Login.module.css';
-import { NavLink } from 'react-router-dom';
+import { logIn } from 'redux/auth/operations';
 
 export const LoginPage = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSumbit = e => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    dispatch(
+      logIn({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
+    navigate('/contacts');
+  };
+
   return (
     <div className={css['login-box']}>
-      <p className={css['login-title']}>Login</p>
-      <form>
+      <p className={css['login-title']}>Log in</p>
+      <form onSubmit={handleSumbit} autoComplete="off">
         <div className={css['user-box']}>
           <input required name="email" type="text" />
           <label>Email</label>
@@ -14,8 +33,8 @@ export const LoginPage = () => {
           <input required name="password" type="password" />
           <label>Password</label>
         </div>
-        <button type="submit" className={css['submit-button']}>
-          Submit
+        <button type="submit" className={css['button']}>
+          Log in
         </button>
       </form>
       <p>
