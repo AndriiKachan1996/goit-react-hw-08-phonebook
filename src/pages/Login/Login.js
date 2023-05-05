@@ -1,7 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import css from './Login.module.css';
-import { logIn } from 'redux/auth/operations';
+import { login } from 'redux/auth/operations';
+// import { logIn } from 'redux/auth/operations';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const LoginPage = () => {
     const form = e.currentTarget;
 
     dispatch(
-      logIn({
+      login({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
