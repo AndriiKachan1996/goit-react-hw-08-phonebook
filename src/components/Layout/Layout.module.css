@@ -3,17 +3,9 @@
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
     height: 2000px;
     
 
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid grey;
-    padding: 20px;
-
-
-}

@@ -1,31 +1,34 @@
 import { useDispatch } from 'react-redux';
-import { NavLink, useNavigate } from 'react-router-dom';
-import css from './Login.module.css';
-import { login } from 'redux/auth/operations';
-// import { logIn } from 'redux/auth/operations';
+import { NavLink } from 'react-router-dom';
+import css from './Register.module.css';
+import { register } from 'redux/auth/operations';
 
-export const LoginPage = () => {
+export const RegisterForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const handleSumbit = e => {
+
+  const handleSubmit = e => {
     e.preventDefault();
 
     const form = e.currentTarget;
 
     dispatch(
-      login({
+      register({
+        name: form.elements.name.value,
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
     );
     form.reset();
-    // navigate('/contacts');
   };
 
   return (
     <div className={css['login-box']}>
-      <p className={css['login-title']}>Log in</p>
-      <form onSubmit={handleSumbit} autoComplete="off">
+      <p className={css['login-title']}>Sing up</p>
+      <form onSubmit={handleSubmit} autoComplete="off">
+        <div className={css['user-box']}>
+          <input required name="name" type="text" />
+          <label>Name</label>
+        </div>
         <div className={css['user-box']}>
           <input required name="email" type="text" />
           <label>Email</label>
@@ -34,14 +37,12 @@ export const LoginPage = () => {
           <input required name="password" type="password" />
           <label>Password</label>
         </div>
-        <button type="submit" className={css['button']}>
-          Log in
-        </button>
+        <button className={css['btn']}>Sign up!</button>
       </form>
-      <p>
+      <p className={css['navigate']}>
         Don't have an account?{' '}
         <NavLink to={'/register'} className={css['signup-link']}>
-          Sign up!
+          Log in
         </NavLink>
       </p>
     </div>

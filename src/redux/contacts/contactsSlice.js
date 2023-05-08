@@ -16,7 +16,7 @@ const contactsInitialState = {
 };
 
 const thunksArr = [fetchContacts, addContact, deleteContact];
-const handleStatus = type => thunksArr.map(el => el[type]);
+export const handleStatus = type => thunksArr.map(el => el[type]);
 
 const contactsSlice = createSlice({
   name: 'contacts',

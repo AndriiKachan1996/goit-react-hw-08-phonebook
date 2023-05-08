@@ -17,7 +17,7 @@ const authSlice = createSlice({
     builder
       .addCase(register.fulfilled, handleFulfilled)
       .addCase(login.fulfilled, handleFulfilled)
-      .addCase(logout.fulfilled, (state, action) => {
+      .addCase(logout.fulfilled, state => {
         state.isLoading = false;
         state.error = '';
         state.user = { name: null, email: null };

@@ -20,21 +20,3 @@ export const selectAuth = state => {
     isLoading,
   };
 };
-
-// також це можна записати окремим хуком:
-// import { useSelector } from 'react-redux';
-// import {
-//   selectUser,
-//   selectIsLoggedIn,
-//   selectIsRefreshing,
-// } from 'redux/auth/selectors';
-
-// export const useAuth = () => {
-//   return {
-//     isLoggedIn: useSelector(selectIsLoggedIn),
-//     isRefreshing: useSelector(selectIsRefreshing),
-//     user: useSelector(selectUser),
-//   };
-// };
-// використання:  const { isLoggedIn } = useAuth();
-// бере три селектора і повертає їх у вигляді одного об'єкту

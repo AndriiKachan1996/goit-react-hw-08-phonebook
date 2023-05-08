@@ -1,0 +1,25 @@
+.text {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    animation: typing 1s steps(40, end),
+               blink-caret .5s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+
+
+
+  .text{
+     margin-top: 40px ;
+     font-size: 45px;
+  }

@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
-// import ConatctList from 'components/ConatctList/ConatctList';
-import { ContactForm } from 'components/ContactForm/ContactForm';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectToken } from 'redux/auth/selectors';
+import { useEffect } from 'react';
 import { fetchContacts } from 'redux/contacts/operations';
-import ContactsList from 'components/ConatctList/ConatctList';
 
-export const ContactsPage = () => {
+import { selectToken } from 'redux/auth/selectors';
+
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import ContactsList from 'components/ContactsList/ContactsList';
+
+const ContactsPage = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
 
@@ -23,3 +24,5 @@ export const ContactsPage = () => {
     </>
   );
 };
+
+export default ContactsPage;
