@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import ConatctList from 'components/ConatctList/ConatctList';
+// import ConatctList from 'components/ConatctList/ConatctList';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectToken } from 'redux/auth/selectors';
 import { fetchContacts } from 'redux/contacts/operations';
+import ContactsList from 'components/ConatctList/ConatctList';
 
 export const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ export const ContactsPage = () => {
   return (
     <>
       <ContactForm />
-      <ConatctList />
+      <ContactsList />
     </>
   );
 };

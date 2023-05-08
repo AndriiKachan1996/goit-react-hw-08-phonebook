@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import css from './Auth.module.css';
-// import { Container } from '@mui/material';
 
 export const AuthNav = () => {
   return (

@@ -19,7 +19,7 @@ export const LoginPage = () => {
       })
     );
     form.reset();
-    navigate('/contacts');
+    // navigate('/contacts');
   };
 
   return (

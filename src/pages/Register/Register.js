@@ -10,6 +10,7 @@ export const Register = () => {
     e.preventDefault();
 
     const form = e.currentTarget;
+
     dispatch(
       register({
         name: form.elements.name.value,
@@ -39,7 +40,7 @@ export const Register = () => {
         <button type="submit">Submit</button>
       </form>
       <p>
-        Do you have an account?{' '}
+        Do you have an account?
         <NavLink to={'/login'} className={css['signup-link']}>
           Login
         </NavLink>

@@ -15,12 +15,6 @@ import contactsReducer from 'redux/contacts/contactsSlice';
 import filterReducer from 'redux/contacts/filterSlice';
 import authReducer from 'redux/auth/authSlice';
 
-// const rootReducer = combineReducers({
-//   contacts: contactsReducer,
-//   filter: filterReducer,
-//   auth: authReducer,
-// });
-
 const authPersistConfig = {
   key: 'auth',
   storage,

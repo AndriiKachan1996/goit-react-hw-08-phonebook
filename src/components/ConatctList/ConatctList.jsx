@@ -8,8 +8,9 @@ import { ContactItem } from 'components/ConatctItem/ConatctItem';
 
 // import ContactsItem from 'components/ContactsItem/ContactsItem';
 
-function ContactsList() {
+export const ContactsList = () => {
   const filtered = useSelector(selectFilteredAndSortedContacts);
+  // console.log(filtered);
 
   return (
     <>
@@ -25,6 +26,6 @@ function ContactsList() {
       </List>
     </>
   );
-}
+};
 
 export default memo(ContactsList);

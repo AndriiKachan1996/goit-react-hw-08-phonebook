@@ -5,10 +5,6 @@ const filterSlice = createSlice({
   initialState: '',
   reducers: {
     setFilter: (_, { payload }) => payload,
-    // в пуст строку фильтра в стейте записали пейлоуд
-    // setFilter: (state, { payload }) => {
-    //   return (payload = payload);
-    // },
   },
 });
 
