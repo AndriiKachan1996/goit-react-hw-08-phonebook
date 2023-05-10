@@ -1,11 +1,14 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import css from './LoginForm.module.css';
 import { login } from 'redux/auth/operations';
+import { selectIsLoggedIn } from 'redux/auth/selectors';
 
 const LoginForm = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
   const handleSumbit = e => {
+    console.log(isLoggedIn);
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -16,7 +19,10 @@ const LoginForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
+
+    if (isLoggedIn) {
+      form.reset();
+    }
   };
 
   return (
