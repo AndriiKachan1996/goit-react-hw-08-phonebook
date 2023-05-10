@@ -41,7 +41,7 @@ export const RegisterForm = () => {
       </form>
       <p className={css['navigate']}>
         Don't have an account?{' '}
-        <NavLink to={'/register'} className={css['signup-link']}>
+        <NavLink to={'/login'} className={css['signup-link']}>
           Log in
         </NavLink>
       </p>
