@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
-import { selectContacts } from 'redux/contacts/selectors';
+import {
+  isLoadingCreateButton,
+  selectContacts,
+} from 'redux/contacts/selectors';
 
 import css from './ContactForm.module.css';
 import { ContactFilter } from 'components/ContactFilter/ContactFilter';
 import { toast } from 'react-toastify';
+import { CreateLoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -13,6 +17,7 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
 
   const { items } = useSelector(selectContacts);
+  const isLoading = useSelector(isLoadingCreateButton);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -33,7 +38,6 @@ export const ContactForm = () => {
         contact.number === newContact.number
     );
     if (contactsIncludes) {
-      reset();
       return toast.error(`${newContact.name} is already in contacts`);
     }
 
@@ -72,7 +76,7 @@ export const ContactForm = () => {
       />
 
       <button className={css.buttonConfirm} type="submit">
-        create contact
+        {isLoading ? <CreateLoaderSpiner /> : <p>create contact</p>}
       </button>
       <ContactFilter />
     </form>

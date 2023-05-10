@@ -13,6 +13,7 @@ const contactsInitialState = {
   items: [],
   isLoading: false,
   error: null,
+  isLoadingCreateButton: false,
 };
 
 const thunksArr = [fetchContacts, addContact, deleteContact];

@@ -7,6 +7,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { selectAuth, selectToken } from 'redux/auth/selectors';
 import { RestrictedRoute } from '../RestrictedRoute';
 import { PrivateRoute } from '../PrivateRoute';
+import { LoaderSpiner } from 'components/LoaderSpiner/LoaderSpiner';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage.jsx'));
 const RegisterPage = lazy(() =>
@@ -30,7 +31,7 @@ export const App = () => {
   }, [dispatch, token]);
 
   return isRefreshing ? (
-    <b>Fetching user data...</b>
+    <LoaderSpiner />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>

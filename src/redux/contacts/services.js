@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 
 export const handlePending = state => {
+  state.isLoadingCreateButton = true;
   state.isLoading = true;
 };
 
@@ -10,6 +11,7 @@ export const handleRejected = (state, action) => {
 };
 
 export const handleFulfilled = state => {
+  state.isLoadingCreateButton = false;
   state.isLoading = false;
   state.error = null;
 };
@@ -32,5 +34,3 @@ export const handleFulfilledDelete = (state, action) => {
   );
   state.items.splice(index, 1);
 };
-
-
